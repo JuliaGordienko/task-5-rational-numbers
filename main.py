@@ -29,5 +29,16 @@ def rationals():
 
 # Пример: вывести первые 80 рациональных
 gen = rationals()
+
+print("80 рациональных чисел:")
 for i, r in enumerate(islice(gen, 80), 1):
-    print(i, r)
+    print(f"{i}: {r}")
+
+print("Для получения следующего рационального числа нажмите Enter.\nДля выхода введите exit")
+i = 81
+while True:
+    user_input = input()
+    if user_input == "exit":
+        break
+    print(f"{i}: {next(gen)}", end="")
+    i += 1
